@@ -33,33 +33,33 @@ Ikuti langkah-langkah berikut untuk mengatur dan menjalankan proyek:
 
 2. **Pindah ke Direktori Proyek**
     Pindah ke direktori proyek (misalnya, jika nama foldernya adalah asaplombok):
-    ```
+    ```bash
     cd asaplombok
     ```
 3. **Instal Dependensi**
     Instal paket yang diperlukan sesuai dengan yang terdaftar di package.json:
-    ```
+    ```bash
     npm install
     # atau
     yarn install
     ```
 4. **Konfigurasi Koneksi Database**
     Atur koneksi database di file .env. File ini harus berisi baris berikut:
-    ```
+    ```bash
     DATABASE_URL="mysql://username:password@localhost:3306/databasename"
     ```
     Sebagai contoh, jika menggunakan MySQL dengan password kosong, URL koneksi mungkin terlihat seperti ini:
-    ```
+    ```bash
     DATABASE_URL="mysql://root:@localhost:3306/asaplombok"
     ```
 5. **Buat Database MySQL**
     Pastikan database MySQL sudah ada. Anda dapat membuatnya menggunakan klien MySQL atau alat baris perintah:
-    ```
+    ```bash
     CREATE DATABASE asaplombok;
     ```
 6. **Jalankan Prisma Migrations**
     Hasilkan klien Prisma dan terapkan migrasi untuk membuat tabel yang diperlukan (misalnya, tabel bernama task sesuai dengan model di prisma/schema.prisma). Pastikan database yang ditentukan di file .env sudah ada.
-    ```
+    ```bash
     npx prisma migrate dev
     ```
     Perintah ini akan membuat tabel berdasarkan skema Prisma Anda dan menerapkan migrasi yang tertunda.
